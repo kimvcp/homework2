@@ -31,6 +31,7 @@ public class Recursion {
 		return list;
 
 	}
+
 	/**
 	 * Finding the value of Fibonacci number.
 	 * 
@@ -50,22 +51,21 @@ public class Recursion {
 	public static int fibonacci2(int n) {
 		return fibonaciiHelper(0, 1, n);
 	}
-	
+
 	/**
 	 * Helper method for Fibonacci.
 	 * 
-	 * @param start value
-	 * @param next value 
+	 * @param start
+	 *            value
+	 * @param next
+	 *            value
 	 * @param position
 	 * @return
 	 */
 	private static int fibonaciiHelper(int start, int next, int position) {
 		if (position <= 0)
 			return start;
-		
-		if (position < 2)
-			return start+next;
-		return fibonaciiHelper(start+next, next+1 , position-1);
+		return fibonaciiHelper(next, start + next, position - 1);
 	}
 
 	public static void main(String[] args) {
