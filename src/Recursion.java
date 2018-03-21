@@ -77,6 +77,6 @@ public class Recursion {
 		list.add("c");
 		System.out.println(unique(list));
 		System.out.println(fibonacci(10));
-		System.out.println(fibonacci2(10));
+		System.out.println(fibonacci2(48));
 	}
 }
