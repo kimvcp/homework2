@@ -31,7 +31,12 @@ public class Recursion {
 		return list;
 
 	}
-
+	/**
+	 * Finding the value of Fibonacci number.
+	 * 
+	 * @param number
+	 * @return the value of fibonacci number
+	 */
 	public static int fibonacci(int n) {
 		// the base case
 		if (n <= 0)
@@ -42,6 +47,27 @@ public class Recursion {
 		return fibonacci(n - 1) + fibonacci(n - 2);
 	}
 
+	public static int fibonacci2(int n) {
+		return fibonaciiHelper(0, 1, n);
+	}
+	
+	/**
+	 * Helper method for Fibonacci.
+	 * 
+	 * @param start value
+	 * @param next value 
+	 * @param position
+	 * @return
+	 */
+	private static int fibonaciiHelper(int start, int next, int position) {
+		if (position <= 0)
+			return start;
+		
+		if (position < 2)
+			return start+next;
+		return fibonaciiHelper(start+next, next+1 , position-1);
+	}
+
 	public static void main(String[] args) {
 		List list = new ArrayList<>();
 		list.add("a");
@@ -49,8 +75,8 @@ public class Recursion {
 		list.add("b");
 		list.add("c");
 		list.add("c");
-		list = unique(list);
-		System.out.println(list);
-		System.out.println(fibonacci(6));
+		System.out.println(unique(list));
+		System.out.println(fibonacci(10));
+		System.out.println(fibonacci2(10));
 	}
 }
